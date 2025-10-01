@@ -48,3 +48,39 @@ body {
 .idade{
     justify-content: left;
 }
+
+
+
+.header {
+  display: flex;
+  justify-content: space-between; /* distribui logo à esquerda e login à direita */
+  align-items: center;
+  padding: 0 40px;
+  background-color: black;
+  height: 116px;
+}
+
+.header-logo {
+  width: 140px;
+}
+
+.header-nav {
+  display: flex;
+  gap: 40px;
+  flex: 1; 
+  padding-left: 62px;
+}
+
+.header-nav a,
+.header-login a {
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: rgb(177, 173, 173);
+  transition: color 0.3s ease;
+}
+
+.header-nav a:hover,
+.header-login a:hover {
+  color: #63190f;
+}
