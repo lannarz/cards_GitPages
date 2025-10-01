@@ -94,12 +94,10 @@ body {
 .header-nav {
   display: flex;
   gap: 40px;
-  flex: 1; 
-  padding-left: 62px;
+  
 }
 
-.header-nav a,
-.header-login a {
+.header-nav a {
   text-decoration: none;
   font-size: 1.3rem;
   font-weight: bold;
@@ -107,12 +105,46 @@ body {
   transition: color 0.3s ease;
 }
 
-.header-nav a:hover,
-.header-login a:hover {
+.header-nav a:hover {
   color: #63190f;
 }
 
 .card-title {
   margin: 6px 0 4px 0;
   padding-top: 0;
+}
+
+
+
+/* Botão hamburguer */
+.menu-toggle {
+  display: none; 
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .header-nav {
+    display: none; 
+    flex-direction: column;
+    background: #000000;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    z-index: 1000; /* garante que fica por cima */
+  }
+
+  .header-nav.active {
+    display: flex; 
+  }
 }
