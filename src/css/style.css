@@ -1,6 +1,7 @@
+
 body {
   font-family: Arial, sans-serif;
-  background-color: #ffffff;
+  background-color: #410303;
   margin: 0;
   padding: 0;
 }
@@ -8,41 +9,67 @@ body {
 .container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center; /* mantém os cards no centro */
+  gap: 27px;
+  justify-content: center;
   padding: 20px;
-  max-width: 1200px;  /* limita largura total (4 cards + espaçamento) */
-  margin: 0 auto;     /* centraliza o container */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .card {
-  width: 250px;       /* largura fixa do card */
-  height: 30rem;      /* altura ajustada */
-  border: 1px solid #ccc;
+  width: 248px;
+  height: 24rem;
+  border: 1px solid #000;
   border-radius: 10px;
   padding: 15px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  background-color: #fff;
-  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: #cacaca;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+
+
+  transform: translate3d(0, 0, 0) scale(1);
+
+  will-change: transform, box-shadow;
+ 
+  transition:
+    transform 0.34s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.34s cubic-bezier(0.4, 0, 0.2, 1);
+
+  opacity: 0;
 }
 
+.card.animate__animated {
+  opacity: 1;
+}
+
+
+.card:nth-child(1)  { animation-delay: 0.2s; }
+.card:nth-child(2)  { animation-delay: 0.4s; }
+.card:nth-child(3)  { animation-delay: 0.6s; }
+.card:nth-child(4)  { animation-delay: 0.8s; }
+.card:nth-child(5)  { animation-delay: 1.0s; }
+.card:nth-child(6)  { animation-delay: 1.2s; }
+.card:nth-child(7)  { animation-delay: 1.4s; }
+.card:nth-child(8)  { animation-delay: 1.6s; }
+.card:nth-child(9)  { animation-delay: 1.8s; }
+.card:nth-child(10) { animation-delay: 2.0s; }
 
 
 .card:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-}
+   transform: scale(1.05)!important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5)!important;
+ }
+
 
 .card-img {
   width: 100%;
-  height: 300px;
+  height: 297px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
-.card-info {
-  justify-content: center;
-  margin-top: 10px;
+.card-desc {
+  color: rgb(106, 106, 105);
+  margin-top: 6px;
 }
 
 .idade{
@@ -83,4 +110,9 @@ body {
 .header-nav a:hover,
 .header-login a:hover {
   color: #63190f;
+}
+
+.card-title {
+  margin: 6px 0 4px 0;
+  padding-top: 0;
 }
